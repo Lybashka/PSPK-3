@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+	function Calculator() {
+		var methods = {
+			"+": function(num1, num2) {
+			return num1 + num2;
+			},
+			"-": function(num1, num2) {
+			return num1 - num2;
+			}
+		};
+		this.calculate = function (str) {
+			var per_v_mas = str.split(' ');
+			var n1 = +per_v_mas[0];
+			var n2= +per_v_mas[2];
+			var operation = per_v_mas[1];
+			if (!methods[operation]) {
+				alert('Такой операции нет в памяти калькулятора','');
+			} else {
+			if (per_v_mas.length > 3) {
+				alert('Калькулятор предназначен для подсчета одной операции','');		
+			}
+			else {
+				return methods.operation()(n1, n2);
+			}}
+			
+		}
+		this.addMethod = function (name,func){
+			 methods.name = func;
+		};
+	}
+ var powerCalc = new Calculator;
+powerCalc.addMethod("*", function(a, b) {
+  return a * b;
+});
+
+powerCalc.addMethod("**", function(a, b) {
+  return Math.pow(a, b);
+});
+
+var result = powerCalc.calculate("2 / 3");
+alert( result ); // 8
+var result = powerCalc.calculate("2 * 3");
+alert( result ); // 8
+var result = powerCalc.calculate("2 / 3");
+alert( result ); // 8
+  </script>
+</body>
+</html>

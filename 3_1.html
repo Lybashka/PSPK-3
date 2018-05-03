@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+	var calculator = {
+		read: function(){
+			this.n1 = +prompt('Введите первое значение','');
+			this.n2 = +prompt('Введите второе значение','');
+		},
+		sum: function() {
+			return this.n1 + this.n2;
+		},
+		mul: function() {
+			return this.n1 * this.n2;
+		}
+	};
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+
+  </script>
+</body>
+</html>

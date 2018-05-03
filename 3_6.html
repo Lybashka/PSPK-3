@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+	var mas = [];
+	for (var j = 2; j < 100; j++) {
+	mas[j] = true;
+	}
+	var p = 2;
+	do {
+		for (j = 2 * p; j < 100; j += p) {
+		mas[j] = false;
+		}
+		for (j = p + 1; j < 100; j++) {
+			if (mas[j]) break;
+		}
+	p = j;
+	} while (p * p < 100);
+	var s = 0;
+	for (j = 0; j < mas.length; j++) {
+		if (mas[j]) {
+			alert(j);
+			s =s + j;
+		}
+	}
+alert( s );
+  </script>
+</body>
+</html>
